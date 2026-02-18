@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'comica boom';
+    /* set name */
+    src: url(/cdn/fonts/Comica\ Boom.otf);
+    /* url of the font */
+}
+
+@font-face {
+    font-family: 'mat saleh';
+    /* set name */
+    src: url(/cdn/fonts/Mat\ Saleh.otf);
+    /* url of the font */
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+#intro {
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+}
+
+#intro > *{
+    font-family: 'mat saleh';
+    opacity: 0;
+    margin: 0;
+    margin-bottom: 1vmin;
+
+}
+
+#intro h1 {
+    font-size: 5vmin;
+    animation: fadeIn 1s ease-out 1s 1 forwards;
+}
+
+#intro h2 {
+    font-size: 3vmin;
+    animation: fadeIn 1s ease-out 2s 1 forwards;
+}
+
+#intro span {
+    font-size: 3vmin;
+    text-decoration: underline;
+    cursor: pointer;
+    animation: fadeIn 1s ease-out 3s 1 forwards;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        transform:translateY(3vmin); 
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
