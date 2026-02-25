@@ -12,58 +12,85 @@
     /* url of the font */
 }
 
+@font-face {
+    font-family: 'fsex';
+    /* set name */
+    src: url(/cdn/fonts/FSEX302.ttf);
+    /* url of the font */
+}
+
+
+:root{
+--foreground:#ccc;
+--background:#000000;
+--link-color-1:#0ff;
+--error:#a00;
+}
+
 html,
 body {
-    padding: 0;
+    user-select: none;
+    font-family: fsex;
+    padding: .0;
     margin: 0;
-    background-color: black;
+    background-color: var(--background);
+    color: var(--foreground);
+    text-shadow: 0 0 .2em var(--foreground);
+    white-space: pre-wrap;
 }
 
-#intro {
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    position: absolute;
+body {
+    padding: 1em;
 }
 
-#intro > *{
-    font-family: 'mat saleh';
-    opacity: 0;
+p{
     margin: 0;
-    margin-bottom: 1vmin;
-
+    color: var(--foreground);
+    text-shadow: 0 0 .2em var(--foreground);
 }
 
-#intro h1 {
-    font-size: 5vmin;
-    animation: fadeIn 1s ease-out 1s 1 forwards;
+a{
+    margin: 0;
+    color: var(--link-color-1);
+    text-shadow: 0 0 .2em var(--link-color-1);
+    text-decoration: none;
 }
 
-#intro h2 {
-    font-size: 3vmin;
-    animation: fadeIn 1s ease-out 2s 1 forwards;
+a:hover, a:focus{
+    margin: 0;
+    color: var(--background);
+    text-shadow: 0 0 0 var(--background);
+    background-color: var(--link-color-1);
 }
 
-#intro span {
-    font-size: 3vmin;
-    text-decoration: underline;
-    cursor: pointer;
-    animation: fadeIn 1s ease-out 3s 1 forwards;
+a.nr{
+    margin: 0;
+    color: var(--error);
+    text-shadow: 0 0 .2em var(--error);
+    text-decoration: none;
 }
 
+a.nr:hover,a.nr:focus{
+    margin: 0;
+    color: var(--foreground);
+    text-shadow: 0 0 0em var(--foreground);
+    background-color: var(--error);
+    text-decoration: none;
+}
 
-@keyframes fadeIn {
-    0% {
-        transform:translateY(3vmin); 
-        opacity: 0;
-    }
+a > span {
+    display: none;
+}
 
-    100% {
-        opacity: 1;
-    }
+a:hover > span {
+        color: var(--foreground);
+    text-shadow: 0 0 .2em var(--foreground);
+        background-color: var(--background);
+    display: initial;
+    
+}
+
+a:hover > span::before {
+    
+    content:' - ';
 }
