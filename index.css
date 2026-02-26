@@ -1,21 +1,7 @@
 @font-face {
-    font-family: 'comica boom';
-    /* set name */
-    src: url(/cdn/fonts/Comica\ Boom.otf);
-    /* url of the font */
-}
-
-@font-face {
-    font-family: 'mat saleh';
-    /* set name */
-    src: url(/cdn/fonts/Mat\ Saleh.otf);
-    /* url of the font */
-}
-
-@font-face {
     font-family: 'fsex';
     /* set name */
-    src: url(/cdn/fonts/FSEX302.ttf);
+    src: url(https://cdn.snapps.dev/misc/fsex.ttf);
     /* url of the font */
 }
 
@@ -29,7 +15,6 @@
 
 html,
 body {
-    user-select: none;
     font-family: fsex;
     padding: .0;
     margin: 0;
@@ -43,10 +28,11 @@ body {
     padding: 1em;
 }
 
-p{
+p,span{
+    --color: var(--foreground);
     margin: 0;
-    color: var(--foreground);
-    text-shadow: 0 0 .2em var(--foreground);
+    color: var(--color);
+    text-shadow: 0 0 .2em var(--color);
 }
 
 a{
@@ -94,3 +80,11 @@ a:hover > span::before {
     
     content:' - ';
 }
+
+.red    { --color: #f00;}
+.orange { --color: #f80;}
+.yellow { --color: #ff0;}
+.green  { --color: #0f0;}
+.cyan   { --color: #0ff;}
+.blue   { --color: #00f;}
+.violet { --color: #f0f;}
