@@ -1,0 +1,16 @@
+{
+    "cc.etke.synapse-admin": {
+        "asManagedUsers": [
+            "^@bot\\.regi\\-bold:sniddy\\.zone$",
+            "^@discordbot:sniddy\\.zone$",
+            "^@discord_[0-9]+:sniddy\\.zone$"
+        ],
+        "corsCredentials": "same-origin",
+        "externalAuthProvider": false,
+        "menu": [],
+        "restrictBaseUrl": "https://matrix.sniddy.zone"
+    },
+    "m.homeserver": {
+        "base_url": "https://matrix.sniddy.zone"
+    }
+}
