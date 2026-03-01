@@ -74,6 +74,7 @@ function validateDob() {
       createConsentCookie(false)
     }
     window.location.reload();
+
   } catch (error) {
     alert("invalid date of birth entered")
   }
@@ -81,11 +82,11 @@ function validateDob() {
 
 function createConsentCookie(ans) {
   var exp = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30).toString()
-  document.cookie = `pass=${ans}; expires=${exp}`;
+  document.cookie = `pass=${ans}; expires=${exp}; path=/`;
 }
 
 function checkConsentCookie() {
   var pass = document.cookie.includes("pass=true")? true:document.cookie.includes("pass=false")?false:undefined;
-  if (pass) createConsentCookie();
+  if (pass) createConsentCookie(true);
   return pass;
 }
