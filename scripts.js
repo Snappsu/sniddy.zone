@@ -85,8 +85,7 @@ function createConsentCookie(ans) {
 }
 
 function checkConsentCookie() {
-  var pass = undefined 
-  document.cookie.includes("pass=true")?pass=true:document.cookie.includes("pass=false")?pass=false:pass=undefined;
+  var pass = document.cookie.includes("pass=true")? true:document.cookie.includes("pass=false")?false:undefined;
   if (pass) createConsentCookie();
   return pass;
 }
